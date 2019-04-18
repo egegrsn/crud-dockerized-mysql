@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+	<style>
+				* {font-family: 'Merriweather', serif;}
+				#formdiv {width:50%;margin:0px auto;}
+				input[type=text] {width: 100%;padding: 12px 20px; margin: 8px 0;box-sizing: border-box;}
+				input[type=submit], button {font-size:20px; padding:10px;margin-right:5px; width: 20%}
+	</style>
+	<title>Delete Student</title>
+</head>
+
+<body>
+	<h1>Delete Phone Number</h1>
+	<form method="POST" action="/deletestudent">
+		{% for row in data %}
+		<label for="name">Name</label>
+		<input name="name" value="{{ row[1] }}" type="text" disabled>
+								
+		<label for="department">Department</label>
+		<input name="phone" value="{{ row[2] }}" type="text" disabled>
+		
+		<input name="delete" type="submit" value="Delete">		
+		<a href="/"><button type="button">Cancel</button></a>
+		
+		{% endfor %}
+		</form>
+</body>
+</html>
